@@ -4,11 +4,11 @@ DataCraft é uma ferramenta intuitiva e poderosa para transformar a maneira como
 
 🚀 Recursos Principais:
 
-    Upload de Dados Simplificado: Carregue arquivos CSV facilmente e prepare-se para explorar seus dados.
-    Transformação Eficiente: Utilize as poderosas bibliotecas do Python para limpar, filtrar e transformar seus dados, garantindo que você obtenha informações valiosas.
-    Execução de Queries SQL: Execute consultas SQL diretamente em seus conjuntos de dados, permitindo análises mais profundas e personalizadas.
-    Visualizações Interativas: Crie gráficos e dashboards dinâmicos com apenas alguns cliques, facilitando a interpretação dos dados.
-    Banco de Dados Integrado: Armazene seus dados transformados de forma segura e acessível, prontos para análise futura.
+- Upload de Dados Simplificado: Carregue arquivos CSV facilmente e prepare-se para explorar seus dados.
+- Transformação Eficiente: Utilize as poderosas bibliotecas do Python para limpar, filtrar e transformar seus dados, garantindo que você obtenha informações valiosas.
+- Execução de Queries SQL: Execute consultas SQL diretamente em seus conjuntos de dados, permitindo análises mais profundas e personalizadas.
+- Visualizações Interativas: Crie gráficos e dashboards dinâmicos com apenas alguns cliques, facilitando a interpretação dos dados.
+- Banco de Dados Integrado: Armazene seus dados transformados de forma segura e acessível, prontos para análise futura.
 
 🌟 Por que Escolher o DataCraft?
 
