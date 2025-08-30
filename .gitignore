@@ -1,2 +1,12 @@
 /venv
 /api/api/__pycache__
+/datacraft/datacraft/__pycache__
+/datacraft/apps/core/__pycache__
+/datacraft/apps/modeling/__pycache__
+/datacraft/apps/monitoring/__pycache__
+/datacraft/apps/pipelines/__pycache__
+/datacraft/apps/queries/__pycache__
+/datacraft/apps/sources/__pycache__
+/datacraft/apps/streaming/__pycache__
+/datacraft/apps/transformations/__pycache__
+/anotações
