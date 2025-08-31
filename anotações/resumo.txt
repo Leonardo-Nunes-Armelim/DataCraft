@@ -1,0 +1,58 @@
+O que é o DataCraft
+
+Uma plataforma web de ETL e análise de dados que permite conectar fontes de dados,
+processar em batch/streaming e organizar em um Data Warehouse com modelo bem estruturado.
+
+- Funcionalidades principais
+Conexão com fontes: APIs, CSV, Kafka (streaming).
+Orquestração: agendar jobs e pipelines com Airflow.
+Processamento: batch (Spark) e streaming (Kafka + Spark).
+Modelagem de dados: gerar tabelas fato/dimensão.
+Consulta: interface para rodar queries SQL nos dados processados.
+Dashboard básico: visualização de métricas ou logs do pipeline.
+
+- Problemas que resolve
+Automatizar ETL de dados em batch e streaming.
+Organizar dados caóticos em um modelo analítico claro (DW).
+Permitir que usuários consultem e visualizem resultados em uma interface simples.
+Mostrar em tempo real a saúde dos pipelines e status das execuções.
+
+- Abas / Ferramentas principais
+Fontes de dados – cadastrar APIs, arquivos, streams.
+Pipelines – criar e monitorar fluxos (Airflow).
+Transformações – configurar regras com Spark.
+Streaming – dados em tempo real via Kafka.
+Modelagem – visualizar fatos e dimensões do DW.
+Consultas SQL – rodar queries nos dados já tratados.
+Monitoramento – logs, alertas e status dos jobs.
+
+Em resumo: seria um mini-Databricks + Airflow + Metabase numa ferramenta só,
+mas focada em mostrar que você sabe construir a engrenagem de dados completa.
+
+- Estimativa de tempo (em horas)
+Setup do projeto Django + estrutura de abas (frontend básico) → 15h
+Banco de dados + autenticação de usuários → 10h
+Módulo de Fontes de Dados (cadastro de CSV, APIs, Kafka) → 20h
+Pipelines com Airflow (integração + UI para monitorar DAGs) → 35h
+Transformações com Spark (batch jobs integrados) → 40h
+Streaming com Kafka + Spark Streaming → 45h
+Modelagem de dados (fato/dimensão, Data Vault opcional) → 25h
+Execução de consultas SQL (interface para DW) → 20h
+Dashboard de monitoramento de jobs/logs → 20h
+Testes, documentação e ajustes finais → 30h
+
+- Total aproximado
+260 horas (~2 meses dedicando 30h/semana).
+
+Se fizer uma versão mais simples (sem interface bonita, só CRUDs e integração básica),
+dá para cortar pela metade: 120–150h (~1 mês).
+
+- O ponto é: não precisa implementar tudo 100% robusto logo de cara.
+Você pode lançar um MVP em 1 mês com:
+
+Cadastro de fontes (CSV + API).
+Pipeline orquestrado no Airflow.
+Transformação batch com Spark.
+Consulta SQL simples.
+
+E depois ir adicionando Kafka + streaming + modelagem mais avançada.

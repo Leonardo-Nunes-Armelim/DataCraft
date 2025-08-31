@@ -1,0 +1,48 @@
+O DataCraft é uma ferramenta que você está desenvolvendo para realizar ETL (Extract, Transform, Load) e engenharia de features com uma interface GUI voltada para uso web. O objetivo é permitir que usuários apliquem Python e SQL para o tratamento de dados e execução de queries de forma prática e interativa. Aqui estão os principais pontos do projeto:
+Objetivo
+
+Criar uma plataforma web que simplifique a manipulação e análise de dados, ideal para engenheiros de dados, cientistas de dados e outros profissionais da área.
+Principais Funcionalidades
+
+    ETL e Engenharia de Features:
+        Extrair dados de diferentes fontes (bancos de dados SQL, arquivos CSV, APIs, etc.).
+        Transformar dados utilizando Python (e bibliotecas como Pandas) e SQL.
+        Carregar os dados processados em sistemas de armazenamento ou para visualizações na plataforma.
+
+    Editor de Código e Queries:
+        Ambiente integrado para escrever e executar scripts Python.
+        Editor de SQL para criação e execução de queries em bancos de dados conectados.
+
+    Interface Amigável:
+        Interface gráfica web desenvolvida com React no frontend.
+        Backend com Django, responsável pelo processamento e conexão com as bases de dados.
+
+    Visualizações de Dados:
+        Ferramentas de visualização integradas, permitindo criar gráficos interativos e dashboards (bibliotecas como Matplotlib, Plotly ou Seaborn podem ser utilizadas).
+
+    Colaboração e Compartilhamento:
+        Opção para salvar pipelines e compartilhá-los com outros usuários.
+        Controle de versão para scripts e queries.
+
+    Escalabilidade:
+        Suporte para grandes volumes de dados com integração a sistemas como Spark ou serviços de nuvem (AWS, Azure, GCP).
+        Possibilidade de execução em máquinas locais ou servidores na nuvem.
+
+Tecnologias
+
+    Frontend: React (HTML, CSS, JavaScript/TypeScript).
+    Backend: Django (Python) com suporte a APIs REST.
+    Banco de Dados: PostgreSQL ou outro banco relacional para armazenamento.
+    Extras:
+        Docker para facilitar a implantação.
+        Integração com bibliotecas de análise de dados (Pandas, NumPy, Scikit-learn, etc.).
+        Possibilidade de adicionar suporte a machine learning no futuro.
+
+Uso Típico
+
+    O usuário faz upload de dados (ou conecta-se a uma base de dados).
+    Configura um pipeline ETL utilizando SQL ou Python.
+    Visualiza os resultados na interface gráfica.
+    Exporta os dados tratados ou cria um dashboard para compartilhar com a equipe.
+
+Se quiser, podemos trabalhar juntos para detalhar mais partes do projeto ou criar algum aspecto específico, como a interface ou o backend. 🚀

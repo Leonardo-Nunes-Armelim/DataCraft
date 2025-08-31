@@ -1,0 +1,64 @@
+datacraft/
+│
+├── manage.py
+├── requirements.txt
+├── datacraft/                 # Configurações principais do projeto
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+│
+├── apps/
+│   ├── core/                  # App central (home, autenticação, dashboard)
+│   │   ├── views.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   └── templates/core/
+│   │
+│   ├── sources/               # Cadastro e gerenciamento de fontes de dados
+│   │   ├── views.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   └── templates/sources/
+│   │
+│   ├── pipelines/             # Pipelines orquestrados no Airflow
+│   │   ├── views.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   └── templates/pipelines/
+│   │
+│   ├── transformations/       # Processamento em batch com Spark
+│   │   ├── views.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   └── templates/transformations/
+│   │
+│   ├── streaming/             # Streaming em tempo real (Kafka + Spark Streaming)
+│   │   ├── views.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   └── templates/streaming/
+│   │
+│   ├── modeling/              # Modelagem de dados (fatos/dimensões, Data Vault)
+│   │   ├── views.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   └── templates/modeling/
+│   │
+│   ├── queries/               # Execução de consultas SQL no DW
+│   │   ├── views.py
+│   │   ├── models.py
+│   │   ├── urls.py
+│   │   └── templates/queries/
+│   │
+│   └── monitoring/            # Logs, alertas e status dos pipelines
+│       ├── views.py
+│       ├── models.py
+│       ├── urls.py
+│       └── templates/monitoring/
+│
+├── static/                    # Arquivos estáticos (CSS, JS, imagens)
+│
+└── templates/                 # Templates base (herança HTML)
+    └── base.html
