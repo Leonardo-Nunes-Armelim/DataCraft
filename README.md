@@ -1,25 +1,47 @@
 # DataCraft
 
-DataCraft é uma ferramenta intuitiva e poderosa para transformar a maneira como você trabalha com dados. Projetada para analistas, desenvolvedores e entusiastas de dados, o DataCraft permite que você extraia, transforme e carregue (ETL) seus dados de forma simples e eficiente, tudo em uma interface web moderna e interativa.
+DataCraft é uma plataforma web de ETL e análise de dados que integra as principais etapas de engenharia de dados em um só lugar.
+Com ele, você pode conectar fontes de dados, processar em batch e streaming, organizar em um Data Warehouse estruturado e consultar/monitorar os resultados em uma interface unificada.
 
-🚀 Recursos Principais:
+## O que o DataCraft oferece
+- Conexão com Fontes de Dados: suporte a arquivos CSV, APIs e streams em Kafka.
+- Orquestração de Pipelines: criação, agendamento e monitoramento de jobs usando Airflow.
+- Processamento de Dados:
+    - Batch: integração com Spark.
+    - Streaming: Kafka + Spark Streaming em tempo real.
+- Modelagem de Dados: geração de tabelas fato/dimensão para análises estruturadas (DW).
+- Consultas SQL: execução de queries diretamente nos dados já tratados.
+- Monitoramento e Logs: visualização em tempo real do status das execuções e saúde dos pipelines.
+- Dashboard Básico: métricas e indicadores para acompanhar o fluxo de dados.
 
-- Upload de Dados Simplificado: Carregue arquivos CSV facilmente e prepare-se para explorar seus dados.
-- Transformação Eficiente: Utilize as poderosas bibliotecas do Python para limpar, filtrar e transformar seus dados, garantindo que você obtenha informações valiosas.
-- Execução de Queries SQL: Execute consultas SQL diretamente em seus conjuntos de dados, permitindo análises mais profundas e personalizadas.
-- Visualizações Interativas: Crie gráficos e dashboards dinâmicos com apenas alguns cliques, facilitando a interpretação dos dados.
-- Banco de Dados Integrado: Armazene seus dados transformados de forma segura e acessível, prontos para análise futura.
+## Problemas que o DataCraft resolve
+- Automatizar pipelines de ETL em batch e streaming.
+- Organizar dados caóticos em um modelo analítico claro (Data Warehouse).
+- Permitir que usuários rodem consultas e visualizem resultados sem depender de ferramentas externas.
+- Acompanhar em tempo real a execução e a saúde de pipelines de dados.
 
-🌟 Por que Escolher o DataCraft?
+## Abas / Módulos principais
+- Fontes de Dados – cadastrar APIs, arquivos e streams Kafka.
+- Pipelines – criar e monitorar fluxos no Airflow.
+- Transformações – configurar regras com Spark.
+- Streaming – dados em tempo real via Kafka + Spark Streaming.
+- Modelagem – visualizar fatos e dimensões do Data Warehouse.
+- Consultas SQL – rodar queries nos dados já tratados.
+- Monitoramento – acompanhar logs, alertas e status dos jobs.
 
-No mundo atual, a habilidade de trabalhar com dados é essencial. O DataCraft foi desenvolvido para democratizar o acesso a ferramentas de análise de dados, permitindo que qualquer pessoa, independentemente de seu nível de experiência, possa transformar dados em insights valiosos. Com uma interface amigável e recursos robustos, você poderá levar suas habilidades analíticas para o próximo nível.
+## Resumindo
+O DataCraft é como um mini-Databricks + Airflow + Metabase, mas desenvolvido do zero para demonstrar habilidade prática em engenharia de dados moderna:
+- ETL batch e streaming.
+- Orquestração de pipelines.
+- Modelagem de dados analítica.
+- Consulta SQL e monitoramento em uma interface web.
 
-Junte-se à revolução dos dados com o DataCraft e descubra o potencial oculto em seus conjuntos de dados!
+## Como Começar:
 
-📖 Como Começar:
-
-    Clone o repositório.
-    Instale as dependências.
+    Clone o repositório
+    python -m venv ./venv
+    .\venv\Scripts\activate.bat
+    python.exe -m pip install --upgrade pip
+    pip install -r requirements.txt
+    py manage.py runserver
     Inicie o servidor e comece a explorar!
-
-Para mais informações, consulte a documentação ou entre em contato com a comunidade.

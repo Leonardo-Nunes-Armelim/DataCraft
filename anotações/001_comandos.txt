@@ -1,0 +1,113 @@
+python -m venv ./venv
+.\venv\Scripts\activate.bat
+python.exe -m pip install --upgrade pip
+pip install django
+pip freeze > requirements.txt
+
+>>> 001 Criando pasta "djangotutorial"
+mkdir djangotutorial
+
+>>> 002 Criando arquivos de configuração para projeto Django
+django-admin startproject mysite djangotutorial
+
+manage.py               Ultilitario de linha de comando para interagir com o projeto Django
+    mysite/             Diretório do projeto
+        __init__.py     Arquivo que diz que diretório atual deve ser considerado como um pacote
+        settings.py     Todas as configurações do projeto
+        urls.py         URLs do projeto
+        asgi.py         Ponto de integração para servidores web ASGI
+        wsgi.py         Ponto de integração para servidores web wsgi
+
+>>> 003 Entrando no projeto "djangotutorial"
+cd djangotutorial
+
+>>> 004 Rodando projeto
+py manage.py runserver
+
+>>> 005 Cria diretório "polls" que é uma aplicação "App"
+py manage.py startapp polls
+
+>>> 006 Alterando arquivos
+App/views.py
+App/urls.py
+Projeto/urls.py
+>>> Isso configura os conteudos das paginas e seus caminhos de URLs
+
+>>> 007 Alterando arquivos (time zone)
+Projeto/settings.py
+
+>>> 008 Busca por INTALLED_APPS e instala qualquer tabelas de banco de dados em DATABASES
+py manage.py migrate
+
+>>> 009 Alterando arquivos models para as tabelas do banco de dados
+App/models.py
+
+>>> 010 Alterando INSTALLED_APPS para adicionar APP "polls" como "polls.apps.PollsConfig"
+Projeto/settings.py
+
+>>> 011 Faz as migrações do APP "polls" para os banco de dados como uma migração "polls\migrations\0001_initial.py"
+py manage.py makemigrations polls
+
+>>> 012 Mostra o SQL que a proxima migração vai rodar para você
+py manage.py sqlmigrate polls 0001
+
+>>> 013 Checa pro problemas em seu projeto sem fazer migrações e sem mexer no banco de dados (opcional)
+python manage.py check
+
+>>> 014 Cria as tabelas dos modelos no banco de dados
+py manage.py migrate
+
+>>> 015 Para fazer mudanças no seu modelo é preciso
+> Alterar App/models.py
+> py manage.py makemigrations polls ou py manage.py makemigrations
+> py manage.py migrate
+
+>>> 016 Abre o shell da API do Django (esse comando carrega os models automaticamento para o CLI)
+py manage.py shell
+
+>>> 017 Exemplos de comandos shell
+Question.objects.all()
+from django.utils import timezone
+q = Question(question_text="What's new?", pub_date=timezone.now())
+q.save()
+q.id
+q.question_text
+q.pub_date
+q.question_text = "What's up?"
+q.save()
+Question.objects.all()
+
+>>> Alterando algumas coisa no App/models.py
+
+>>> Mais alguns exemplos de comandos shell
+Question.objects.all()
+Question.objects.filter(id=1)
+Question.objects.filter(question_text__startswith="What")
+from django.utils import timezone
+current_year = timezone.now().year
+Question.objects.get(pub_date__year=current_year)
+Question.objects.get(id=2)
+Question.objects.get(pk=1)
+q = Question.objects.get(pk=1)
+q.was_published_recently()
+q = Question.objects.get(pk=1)
+q.choice_set.all()
+q.choice_set.create(choice_text="Not much", votes=0)
+q.choice_set.create(choice_text="The sky", votes=0)
+c = q.choice_set.create(choice_text="Just hacking again", votes=0)
+c.question
+q.choice_set.all()
+q.choice_set.count()
+Choice.objects.filter(question__pub_date__year=current_year)
+c = q.choice_set.filter(choice_text__startswith="Just hacking")
+c.delete()
+
+>>> Cria usuário de administrador para editar conteudo do site
+py manage.py createsuperuser
+> admin
+> admin@example.com
+> 123
+
+>>> Iniciar servidor
+py manage.py runserver
+
