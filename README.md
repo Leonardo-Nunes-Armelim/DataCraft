@@ -1,5 +1,4 @@
 # DataCraft
-
 DataCraft é uma plataforma web de ETL e análise de dados que integra as principais etapas de engenharia de dados em um só lugar.
 Com ele, você pode conectar fontes de dados, processar em batch e streaming, organizar em um Data Warehouse estruturado e consultar/monitorar os resultados em uma interface unificada.
 
@@ -37,7 +36,6 @@ O DataCraft é como um mini-Databricks + Airflow + Metabase, mas desenvolvido do
 - Consulta SQL e monitoramento em uma interface web.
 
 ## Como Começar:
-
     Clone o repositório
     python -m venv ./venv
     .\venv\Scripts\activate.bat
