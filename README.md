@@ -41,5 +41,6 @@ O DataCraft é como um mini-Databricks + Airflow + Metabase, mas desenvolvido do
     .\venv\Scripts\activate.bat
     python.exe -m pip install --upgrade pip
     pip install -r requirements.txt
+    cd datacraft
     py manage.py runserver
     Inicie o servidor e comece a explorar!
