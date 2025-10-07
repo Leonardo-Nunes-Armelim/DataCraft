@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataCraft - {% block title %}{% endblock %}</title>
+  <!--
+  <link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}">
+  -->
+  <link rel="stylesheet" href="{% static '../../../../static/css/sidebar.css' %}">
+</head>
+<body>
+  <!-- SIDEBAR MENU -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="sidebar-title">DataCraft</h2>
+      <button id="toggle-btn" class="toggle-btn">☰</button>
+    </div>
+
+    <!-- Sidebar menu items -->
+    <ul class="menu">
+      <li><a href="{% url 'core:index' %}"><span class="icon">📊</span><span class="text">Dashboard</span></a></li>
+      <li><a href="{% url 'sources:index' %}"><span class="icon">🗂️</span><span class="text">Fontes de Dados</span></a></li>
+      <li><a href="{% url 'pipelines:index' %}"><span class="icon">🔄</span><span class="text">Pipelines</span></a></li>
+      <li><a href="{% url 'transformations:index' %}"><span class="icon">⚙️</span><span class="text">Transformações</span></a></li>
+      <li><a href="{% url 'streaming:index' %}"><span class="icon">📡</span><span class="text">Streaming</span></a></li>
+      <li><a href="{% url 'modeling:index' %}"><span class="icon">🧠</span><span class="text">Modelagem</span></a></li>
+      <li><a href="{% url 'queries:index' %}"><span class="icon">🧾</span><span class="text">Consultas</span></a></li>
+      <li><a href="{% url 'monitoring:index' %}"><span class="icon">📈</span><span class="text">Monitoramento</span></a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+  </script>
+</body>
+</html>

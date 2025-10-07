@@ -1,55 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-{% load static %}
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataCraft - Dashboard</title>
-  <!-- Link to the sidebar CSS file -->
-  <link rel="stylesheet" href="{% static '../../../../static/css/sidebar.css' %}">
-</head>
+{% extends "core/base.html" %}
 
-<body>
-  <!-- SIDEBAR MENU -->
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <!-- Sidebar title -->
-      <h2 class="sidebar-title">DataCraft</h2>
-      <!-- Toggle button to collapse/expand sidebar -->
-      <button id="toggle-btn" class="toggle-btn">☰</button>
-    </div>
+{% block title %}Dashboard{% endblock %}
 
-    <!-- Sidebar menu items -->
-    <ul class="menu">
-      <li><a href="{% url 'core:index' %}"><span class="icon">📊</span><span class="text">Dashboard</span></a></li>
-      <li><a href="{% url 'sources:index' %}"><span class="icon">🗂️</span><span class="text">Fontes de Dados</span></a></li>
-      <li><a href="{% url 'pipelines:index' %}"><span class="icon">🔄</span><span class="text">Pipelines</span></a></li>
-      <li><a href="{% url 'transformations:index' %}"><span class="icon">⚙️</span><span class="text">Transformações</span></a></li>
-      <li><a href="{% url 'streaming:index' %}"><span class="icon">📡</span><span class="text">Streaming</span></a></li>
-      <li><a href="{% url 'modeling:index' %}"><span class="icon">🧠</span><span class="text">Modelagem</span></a></li>
-      <li><a href="{% url 'queries:index' %}"><span class="icon">🧾</span><span class="text">Consultas</span></a></li>
-      <li><a href="{% url 'monitoring:index' %}"><span class="icon">📈</span><span class="text">Monitoramento</span></a></li>
-    </ul>
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <div class="content">
-    <h1>Bem-vindo ao DataCraft</h1>
-    <p>Select a section in the sidebar to start exploring your data.</p>
-
-    {% block content %}
-    {% endblock %}
-  </div>
-
-  <!-- INTERACTION SCRIPT -->
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.getElementById('toggle-btn');
-
-    // Toggle 'collapsed' class when clicking the sidebar button
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-    });
-  </script>
-</body>
-</html>
+{% block content %}
+<h1>Dashboard</h1>
+<p>Essa é a página de dashboard.</p>
+{% endblock %}
