@@ -5,4 +5,5 @@ from django.template import loader
 #from .models import Question
 
 def index(request):
-    return HttpResponse("Path: pipelines")
+    #return HttpResponse("Path: pipelines")
+    return render(request, 'pipelines/index.html')

@@ -5,4 +5,5 @@ from django.template import loader
 #from .models import Question
 
 def index(request):
-    return HttpResponse("Path: streaming")
+    #return HttpResponse("Path: streaming")
+    return render(request, 'streaming/index.html')

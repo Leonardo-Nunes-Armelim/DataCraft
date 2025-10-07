@@ -5,4 +5,5 @@ from django.template import loader
 #from .models import Question
 
 def index(request):
-    return HttpResponse("Path: queries")
+    #return HttpResponse("Path: queries")
+    return render(request, 'queries/index.html')
