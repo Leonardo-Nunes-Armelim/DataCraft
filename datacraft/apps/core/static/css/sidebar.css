@@ -1,58 +1,121 @@
+/* Reset body margin and use flex layout for sidebar + content */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
 }
 
+/* ---------------- Sidebar ---------------- */
 .sidebar {
   width: 240px;
   background-color: #1e1e2f;
   color: white;
   height: 100vh;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease; /* smooth width transition */
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
+/* Sidebar when collapsed */
 .sidebar.collapsed {
   width: 70px;
 }
 
+/* ---------------- Sidebar Header ---------------- */
 .sidebar-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* title left, button right */
   padding: 1rem;
   background-color: #27293d;
+  position: relative;
 }
 
-.sidebar h2 {
+/* Sidebar title styling */
+.sidebar h2.sidebar-title {
   margin: 0;
   font-size: 1.2rem;
+  transition: opacity 0.3s ease;
 }
 
+/* Hide title when collapsed */
+.sidebar.collapsed .sidebar-title {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------------- Toggle Button ---------------- */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute; /* remove from normal flow */
+  right: 1rem; /* default position for expanded sidebar */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* stay above other elements */
+}
+
+/* Center toggle button when sidebar is collapsed */
+.sidebar.collapsed .toggle-btn {
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------------- Menu ---------------- */
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex: 1; /* fill remaining sidebar height */
 }
 
 .menu li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Menu links */
 .menu a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 0.8rem 1rem;
   color: white;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, justify-content 0.3s;
 }
 
+/* Hover effect for menu links */
 .menu a:hover {
   background-color: #383b59;
 }
 
+/* Icon inside menu links */
+.menu a .icon {
+  font-size: 1.2rem;
+}
+
+/* Center icons when sidebar is collapsed */
+.sidebar.collapsed .menu a {
+  justify-content: center;
+}
+
+/* Text inside menu links */
+.menu a .text {
+  margin-left: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide text when sidebar is collapsed */
+.sidebar.collapsed .menu a .text {
+  display: none;
+}
+
+/* ---------------- Main Content ---------------- */
 .content {
   flex: 1;
   padding: 2rem;

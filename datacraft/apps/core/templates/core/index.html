@@ -5,44 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DataCraft - Dashboard</title>
+  <!-- Link to the sidebar CSS file -->
   <link rel="stylesheet" href="{% static '../../../../static/css/sidebar.css' %}">
 </head>
 
 <body>
-  <!-- MENU LATERAL -->
+  <!-- SIDEBAR MENU -->
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h2>DataCraft</h2>
-      <button id="toggle-btn">☰</button>
+      <!-- Sidebar title -->
+      <h2 class="sidebar-title">DataCraft</h2>
+      <!-- Toggle button to collapse/expand sidebar -->
+      <button id="toggle-btn" class="toggle-btn">☰</button>
     </div>
 
+    <!-- Sidebar menu items -->
     <ul class="menu">
-      <li><a href="{% url 'core:index' %}">📊 Dashboard</a></li>
-      <li><a href="{% url 'sources:index' %}">🗂️ Fontes de Dados</a></li>
-      <li><a href="{% url 'pipelines:index' %}">🔄 Pipelines</a></li>
-      <li><a href="{% url 'transformations:index' %}">⚙️ Transformações</a></li>
-      <li><a href="{% url 'streaming:index' %}">📡 Streaming</a></li>
-      <li><a href="{% url 'modeling:index' %}">🧠 Modelagem</a></li>
-      <li><a href="{% url 'queries:index' %}">🧾 Consultas</a></li>
-      <li><a href="{% url 'monitoring:index' %}">📈 Monitoramento</a></li>
+      <li><a href="{% url 'core:index' %}"><span class="icon">📊</span><span class="text">Dashboard</span></a></li>
+      <li><a href="{% url 'sources:index' %}"><span class="icon">🗂️</span><span class="text">Fontes de Dados</span></a></li>
+      <li><a href="{% url 'pipelines:index' %}"><span class="icon">🔄</span><span class="text">Pipelines</span></a></li>
+      <li><a href="{% url 'transformations:index' %}"><span class="icon">⚙️</span><span class="text">Transformações</span></a></li>
+      <li><a href="{% url 'streaming:index' %}"><span class="icon">📡</span><span class="text">Streaming</span></a></li>
+      <li><a href="{% url 'modeling:index' %}"><span class="icon">🧠</span><span class="text">Modelagem</span></a></li>
+      <li><a href="{% url 'queries:index' %}"><span class="icon">🧾</span><span class="text">Consultas</span></a></li>
+      <li><a href="{% url 'monitoring:index' %}"><span class="icon">📈</span><span class="text">Monitoramento</span></a></li>
     </ul>
   </div>
 
-  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- MAIN CONTENT -->
   <div class="content">
     <h1>Bem-vindo ao DataCraft</h1>
-    <p>Selecione uma seção no menu lateral para começar a explorar seus dados.</p>
+    <p>Select a section in the sidebar to start exploring your data.</p>
 
     {% block content %}
-    <!-- Conteúdo das outras páginas será inserido aqui -->
     {% endblock %}
   </div>
 
-  <!-- SCRIPT DE INTERAÇÃO -->
+  <!-- INTERACTION SCRIPT -->
   <script>
     const sidebar = document.getElementById('sidebar');
     const toggleBtn = document.getElementById('toggle-btn');
 
+    // Toggle 'collapsed' class when clicking the sidebar button
     toggleBtn.addEventListener('click', () => {
       sidebar.classList.toggle('collapsed');
     });
