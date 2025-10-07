@@ -1,1 +1,51 @@
-<h1>teste</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataCraft - Dashboard</title>
+  <link rel="stylesheet" href="{% static '../../../../static/css/sidebar.css' %}">
+</head>
+
+<body>
+  <!-- MENU LATERAL -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>DataCraft</h2>
+      <button id="toggle-btn">☰</button>
+    </div>
+
+    <ul class="menu">
+      <li><a href="{% url 'core:index' %}">📊 Dashboard</a></li>
+      <li><a href="{% url 'sources:index' %}">🗂️ Fontes de Dados</a></li>
+      <li><a href="{% url 'pipelines:index' %}">🔄 Pipelines</a></li>
+      <li><a href="{% url 'transformations:index' %}">⚙️ Transformações</a></li>
+      <li><a href="{% url 'streaming:index' %}">📡 Streaming</a></li>
+      <li><a href="{% url 'modeling:index' %}">🧠 Modelagem</a></li>
+      <li><a href="{% url 'queries:index' %}">🧾 Consultas</a></li>
+      <li><a href="{% url 'monitoring:index' %}">📈 Monitoramento</a></li>
+    </ul>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="content">
+    <h1>Bem-vindo ao DataCraft</h1>
+    <p>Selecione uma seção no menu lateral para começar a explorar seus dados.</p>
+
+    {% block content %}
+    <!-- Conteúdo das outras páginas será inserido aqui -->
+    {% endblock %}
+  </div>
+
+  <!-- SCRIPT DE INTERAÇÃO -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+  </script>
+</body>
+</html>
