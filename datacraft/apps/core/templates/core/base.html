@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DataCraft - {% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
 </head>
 <body>
   <!-- SIDEBAR MENU -->
@@ -30,9 +31,14 @@
 
   <!-- MAIN CONTENT -->
   <div class="content">
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+    <div class="bg-blue-500 text-white p-4">Tailwind carregado com sucesso!</div>
     {% block content %}
     {% endblock %}
   </div>
+
 
   <!-- SCRIPT -->
   <script>
