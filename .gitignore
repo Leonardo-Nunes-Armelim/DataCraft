@@ -1,6 +1,7 @@
 /venv
 /api/api/__pycache__
 /datacraft/datacraft/__pycache__
+/datacraft/theme/__pycache__
 /datacraft/apps/core/__pycache__
 /datacraft/apps/core/migrations/__pycache__
 /datacraft/apps/core/templates/core/__pycache__
