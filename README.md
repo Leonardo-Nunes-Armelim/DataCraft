@@ -44,3 +44,10 @@ O DataCraft é como um mini-Databricks + Airflow + Metabase, mas desenvolvido do
     cd datacraft
     py manage.py runserver
     Inicie o servidor e comece a explorar!
+
+## Iniciar Projeto existente:
+Windows
+    start_datacraft.bat
+
+Mac/Linux
+    ./start_datacraft.sh
