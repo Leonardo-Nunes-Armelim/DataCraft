@@ -62,3 +62,18 @@ datacraft/
 │
 └── templates/                 # Templates base (herança HTML)
     └── base.html
+
+#27293D — Menu selecionado
+#1E1E2F — Menu não selecionado
+#FFFFFF — Texto do menu
+#0F101A — Fundo geral da aplicação
+#2F3147 — Cartões / caixas / painéis
+#3E4160 — Bordas suaves / divisores
+#4C78FF — Cor de destaque (botões primários e links)
+#7F8CFF — Cor de hover / destaque secundário
+#BFC3FF — Detalhes sutis e ícones claros
+#EDEDED — Texto secundário / labels
+#2ECC71 — Verde (sucesso / concluído)
+#F1C40F — Amarelo (em andamento)
+#E67E22 — Laranja (atenção / processamento lento)
+#E74C3C — Vermelho (erro / falha)
