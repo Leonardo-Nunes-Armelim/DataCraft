@@ -46,8 +46,10 @@ O DataCraft é como um mini-Databricks + Airflow + Metabase, mas desenvolvido do
     Inicie o servidor e comece a explorar!
 
 ## Iniciar Projeto existente:
-Windows
+### Windows
+
     start_datacraft.bat
 
-Mac/Linux
+### Mac/Linux
+
     ./start_datacraft.sh
