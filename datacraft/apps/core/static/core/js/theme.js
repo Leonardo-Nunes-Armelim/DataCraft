@@ -13,6 +13,12 @@ function applyTheme(theme) {
   const nextTheme = theme === 'dark' ? 'dark' : 'light';
 
   document.documentElement.setAttribute('data-theme', nextTheme);
+  document.body?.setAttribute('data-theme', nextTheme);
+
+  if (sidebar) {
+    sidebar.setAttribute('data-theme', nextTheme);
+  }
+
   localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 
   if (themeToggleBtn) {

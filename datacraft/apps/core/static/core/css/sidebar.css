@@ -10,13 +10,32 @@ body * {
   box-sizing: border-box;
 }
 
+:root,
+:root[data-theme='light'],
+[data-theme='light'] {
+  --sidebar-bg: #ffffff;
+  --sidebar-header-bg: #f1f5f9;
+  --sidebar-text: #111827;
+  --sidebar-border: rgba(15, 23, 42, 0.12);
+  --sidebar-link-hover-bg: #e2e8f0;
+}
+
+:root[data-theme='dark'],
+[data-theme='dark'] {
+  --sidebar-bg: #1e1e2f;
+  --sidebar-header-bg: #27293d;
+  --sidebar-text: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-link-hover-bg: #383b59;
+}
+
 /* ---------------- Sidebar ---------------- */
 #sidebar {
   width: 240px;
-  background-color: #1e1e2f;
-  color: white;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
   height: 100vh;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -35,9 +54,10 @@ body * {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #27293d;
+  background-color: var(--sidebar-header-bg);
   position: relative;
   min-height: 72px;
+  transition: background-color 0.3s ease;
 }
 
 /* Sidebar title styling */
@@ -70,7 +90,7 @@ body * {
 .toggle-btn {
   background: none;
   border: none;
-  color: white;
+  color: var(--sidebar-text);
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -104,9 +124,10 @@ body * {
 }
 
 #sidebar > .menu > li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--sidebar-border);
   width: 100%;
   margin: 0;
+  transition: border-color 0.3s ease;
 }
 
 /* Menu links */
@@ -114,9 +135,9 @@ body * {
   display: flex;
   align-items: center;
   padding: 0.8rem 1rem;
-  color: white;
+  color: var(--sidebar-text);
   text-decoration: none;
-  transition: background-color 0.3s, justify-content 0.3s;
+  transition: background-color 0.3s, color 0.3s ease, justify-content 0.3s;
   width: 100%;
   min-height: 48px;
   border-radius: 0;
@@ -125,7 +146,7 @@ body * {
 
 /* Hover effect for menu links */
 #sidebar > .menu > li > a:hover {
-  background-color: #383b59;
+  background-color: var(--sidebar-link-hover-bg);
 }
 
 /* Icon inside menu links */
@@ -150,4 +171,72 @@ body * {
 /* Hide text when sidebar is collapsed */
 #sidebar.collapsed > .menu > li > a .text {
   display: none;
+}
+
+:root[data-theme='light'] #sidebar,
+body[data-theme='light'] #sidebar,
+#sidebar[data-theme='light'] {
+  background: #ffffff;
+  color: #111827;
+}
+
+:root[data-theme='light'] #sidebar .sidebar-header,
+body[data-theme='light'] #sidebar .sidebar-header,
+#sidebar[data-theme='light'] .sidebar-header {
+  background: #f1f5f9;
+}
+
+:root[data-theme='light'] #sidebar .toggle-btn,
+body[data-theme='light'] #sidebar .toggle-btn,
+#sidebar[data-theme='light'] .toggle-btn,
+:root[data-theme='light'] #sidebar > .menu > li > a,
+body[data-theme='light'] #sidebar > .menu > li > a,
+#sidebar[data-theme='light'] > .menu > li > a {
+  color: #111827;
+}
+
+:root[data-theme='light'] #sidebar > .menu > li,
+body[data-theme='light'] #sidebar > .menu > li,
+#sidebar[data-theme='light'] > .menu > li {
+  border-bottom-color: rgba(15, 23, 42, 0.12);
+}
+
+:root[data-theme='light'] #sidebar > .menu > li > a:hover,
+body[data-theme='light'] #sidebar > .menu > li > a:hover,
+#sidebar[data-theme='light'] > .menu > li > a:hover {
+  background: #e2e8f0;
+}
+
+:root[data-theme='dark'] #sidebar,
+body[data-theme='dark'] #sidebar,
+#sidebar[data-theme='dark'] {
+  background: #1e1e2f;
+  color: #ffffff;
+}
+
+:root[data-theme='dark'] #sidebar .sidebar-header,
+body[data-theme='dark'] #sidebar .sidebar-header,
+#sidebar[data-theme='dark'] .sidebar-header {
+  background: #27293d;
+}
+
+:root[data-theme='dark'] #sidebar .toggle-btn,
+body[data-theme='dark'] #sidebar .toggle-btn,
+#sidebar[data-theme='dark'] .toggle-btn,
+:root[data-theme='dark'] #sidebar > .menu > li > a,
+body[data-theme='dark'] #sidebar > .menu > li > a,
+#sidebar[data-theme='dark'] > .menu > li > a {
+  color: #ffffff;
+}
+
+:root[data-theme='dark'] #sidebar > .menu > li,
+body[data-theme='dark'] #sidebar > .menu > li,
+#sidebar[data-theme='dark'] > .menu > li {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme='dark'] #sidebar > .menu > li > a:hover,
+body[data-theme='dark'] #sidebar > .menu > li > a:hover,
+#sidebar[data-theme='dark'] > .menu > li > a:hover {
+  background: #383b59;
 }

@@ -12,13 +12,13 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}">
-  <link rel="stylesheet" href="{% static 'core/css/main_content.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/main_content.css' %}?v=2">
   <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}?v=2">
 </head>
 <body>
   <!-- SIDEBAR MENU -->
-  <div class="sidebar" id="sidebar">
+  <div id="sidebar">
     <div class="sidebar-header">
       <h2 class="sidebar-title"><a href="{% url 'core:index' %}">DataCraft</a></h2>
       <button id="toggle-btn" class="toggle-btn">☰</button>
@@ -52,6 +52,6 @@
 
 
   <!-- SCRIPT -->
-  <script src="{% static 'core/js/theme.js' %}"></script>
+  <script src="{% static 'core/js/theme.js' %}?v=2"></script>
 </body>
 </html>
