@@ -77,3 +77,9 @@ datacraft/
 #F1C40F — Amarelo (em andamento)
 #E67E22 — Laranja (atenção / processamento lento)
 #E74C3C — Vermelho (erro / falha)
+
+TO_DO
+- UI
+- Conexão com API (simulação de galpão de distribuição com robozinhos)
+- Visualização de dados
+- SQL
