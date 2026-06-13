@@ -55,13 +55,13 @@ Você pode verificar a porta utilizada pelo dispositivo no Gerenciador de Dispos
 Criar o ambiente virtual:
 
 ```bash
-python -m venv ./venv
+python -m venv ./venv_LFR
 ```
 
 Ativar o ambiente virtual:
 
 ```bash
-.\venv\Scripts\activate.bat
+.\venv_LFR\Scripts\activate.bat
 ```
 
 Atualizar o pip:
