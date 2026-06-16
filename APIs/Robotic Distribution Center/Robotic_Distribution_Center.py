@@ -1,5 +1,6 @@
 import pygame as pg
-
+import Box
+import Robot
 
 class Robotic_Distribution_Center:
     def __init__(self):
@@ -24,6 +25,36 @@ class Robotic_Distribution_Center:
 
         self.robots = [[10, 10], [10, 30]]
 
+        self.robot = Robot.Robot([100, 615])
+        self.p_index = 0
+        self.paths = [[100, 615],
+                      [100, 570],
+                      [120, 570],
+                      [120, 105],
+                      [120, 80],
+                      [30, 80],
+                      [30, 570],
+                      [100, 570]]
+
+    def mouse_has_clicked(self, input):
+            if self.last_click_status == input:
+                return (False, False, False)
+            else:
+                left_button = False
+                center_button = False
+                right_button = False
+                if self.last_click_status[0] == False and input[0] == True:
+                    left_button = True
+                if self.last_click_status[1] == False and input[1] == True:
+                    center_button = True
+                if self.last_click_status[2] == False and input[2] == True:
+                    right_button = True
+
+                return (left_button, center_button, right_button)
+
+    def clear_window(self):
+        pg.draw.rect(self.window, self.white, (0, 0, self.window.get_width(), self.window.get_height()))
+
     def map(self):
 
         # Robots
@@ -37,6 +68,8 @@ class Robotic_Distribution_Center:
         for c in range(25):
             pg.draw.line(self.window, self.black, (60 + (c * 40), 100), (60 + (c * 40), 300), 1)
             for l in range(21):
+                #if l < 20:
+                #    pg.draw.rect(self.window, self.red, (50 + (c * 40), 100 + (l * 10), 10, 10))
                 pg.draw.line(self.window, self.black, (50 + (c * 40), 100 + (l * 10)), (70 + (c * 40), 100 + (l * 10)), 1)
         for c in range(25):
             pg.draw.line(self.window, self.black, (60 + (c * 40), 350), (60 + (c * 40), 550), 1)
@@ -64,24 +97,41 @@ class Robotic_Distribution_Center:
         #pg.draw.rect(self.window, self.purple_dark, (  10, 550, 40, 40))
         #pg.draw.rect(self.window, self.purple_dark, (1030, 550, 40, 40))
 
-    def mouse_has_clicked(self, input):
-            if self.last_click_status == input:
-                return (False, False, False)
+        # Paths
+        #pg.draw.circle(self.window, self.red, (120, 570), 7)
+        #pg.draw.circle(self.window, self.red, (100, 570), 7)
+        pg.draw.circle(self.window, self.red, (100, 615), 7)
+        pg.draw.circle(self.window, self.red, (100, 570), 7)
+        pg.draw.circle(self.window, self.red, (120, 570), 7)
+        pg.draw.circle(self.window, self.red, (120, 105), 7)
+        pg.draw.circle(self.window, self.red, (120, 80), 7)
+        pg.draw.circle(self.window, self.red, (30, 80), 7)
+        pg.draw.circle(self.window, self.red, (30, 570), 7)
+        pg.draw.circle(self.window, self.red, (100, 570), 7)
+        #pg.draw.circle(self.window, self.red, (100, 570), 7)
+        #pg.draw.circle(self.window, self.red, (120, 570), 7)
+        # Path Outbound
+        #pg.draw.circle(self.window, self.red, (100, 80), 7)
+        #pg.draw.circle(self.window, self.red, (100, 35), 7)
+
+    def creating_shelf_addresses(self):
+        for column in range(25):
+            for row in range(20):
+                # Duas caixas por linha
+                # Coordenada de parada do robo [[],[],[]]
+                # Coordenada de posicionamento da caixa [[],[],[]]
+                # pg.draw.rect(self.window, self.red, (50 + (c * 40), 100 + (l * 10), 10, 10))
+                pass
+
+    def robots_rend(self):
+        if self.robot.next_pos == None:
+            if self.p_index == 7:
+                self.p_index = 0
             else:
-                left_button = False
-                center_button = False
-                right_button = False
-                if self.last_click_status[0] == False and input[0] == True:
-                    left_button = True
-                if self.last_click_status[1] == False and input[1] == True:
-                    center_button = True
-                if self.last_click_status[2] == False and input[2] == True:
-                    right_button = True
-
-                return (left_button, center_button, right_button)
-
-    def clear_window(self):
-        pg.draw.rect(self.window, self.white, (0, 0, self.window.get_width(), self.window.get_height()))
+                self.p_index += 1
+            self.robot.next_pos = self.paths[self.p_index]
+        self.robot.move()
+        pg.draw.circle(self.window, self.blue, (self.robot.pos[0], self.robot.pos[1]), 7)
 
 
 rdc = Robotic_Distribution_Center()
@@ -108,6 +158,7 @@ while True:
     rdc.clock.tick(60)
     rdc.clear_window()
     rdc.map()
+    rdc.robots_rend()
 
 
     rdc.last_click_status = mouse_input
