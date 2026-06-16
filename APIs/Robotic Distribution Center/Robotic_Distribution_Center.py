@@ -68,8 +68,6 @@ class Robotic_Distribution_Center:
         for c in range(25):
             pg.draw.line(self.window, self.black, (60 + (c * 40), 100), (60 + (c * 40), 300), 1)
             for l in range(21):
-                #if l < 20:
-                #    pg.draw.rect(self.window, self.red, (50 + (c * 40), 100 + (l * 10), 10, 10))
                 pg.draw.line(self.window, self.black, (50 + (c * 40), 100 + (l * 10)), (70 + (c * 40), 100 + (l * 10)), 1)
         for c in range(25):
             pg.draw.line(self.window, self.black, (60 + (c * 40), 350), (60 + (c * 40), 550), 1)
@@ -85,8 +83,6 @@ class Robotic_Distribution_Center:
         pg.draw.rect(self.window, self.purple_dark, (490, 10, 100, 50))
         pg.draw.rect(self.window, self.purple_dark, (710, 10, 100, 50))
         pg.draw.rect(self.window, self.purple_dark, (930, 10, 100, 50))
-        #pg.draw.rect(self.window, self.purple_dark, (  10, 60, 40, 40))
-        #pg.draw.rect(self.window, self.purple_dark, (1030, 60, 40, 40))
 
         # Outbound
         pg.draw.rect(self.window, self.purple_dark, ( 50, 590, 100, 50))
@@ -94,22 +90,45 @@ class Robotic_Distribution_Center:
         pg.draw.rect(self.window, self.purple_dark, (490, 590, 100, 50))
         pg.draw.rect(self.window, self.purple_dark, (710, 590, 100, 50))
         pg.draw.rect(self.window, self.purple_dark, (930, 590, 100, 50))
-        #pg.draw.rect(self.window, self.purple_dark, (  10, 550, 40, 40))
-        #pg.draw.rect(self.window, self.purple_dark, (1030, 550, 40, 40))
+
+        for i in range(5):
+            if i % 2 == 0:
+                # Inbound
+                pg.draw.circle(self.window, self.green, (100 + (220 * i), 615), 7)
+                pg.draw.circle(self.window, self.green, (100 + (220 * i), 570), 7)
+                # Outbound
+                pg.draw.circle(self.window, self.green, (100 + (220 * i), 35), 7)
+                pg.draw.circle(self.window, self.green, (100 + (220 * i), 80), 7)
+            else:
+                # Inbound
+                pg.draw.circle(self.window, self.green, (100 + (220 * i), 615), 7)
+                # Outbound
+                pg.draw.circle(self.window, self.green, (100 + (220 * i), 35), 7)
+
+        # Corredor do meio
+        for ii in range(26):
+            # Corredor
+            pg.draw.circle(self.window, self.red, (40 + (40 * ii), 325), 7)
+            if ii in [7, 18]:
+                # Outbound
+                pg.draw.circle(self.window, self.green, (40 + (40 * ii), 570), 7)
+                # Inbound
+                pg.draw.circle(self.window, self.green, (40 + (40 * ii),  80), 7)
+            else:
+                # Outbound
+                pg.draw.circle(self.window, self.red, (40 + (40 * ii), 570), 7)
+                # Inbound
+                pg.draw.circle(self.window, self.red, (40 + (40 * ii),  80), 7)
 
         # Paths
-        #pg.draw.circle(self.window, self.red, (120, 570), 7)
-        #pg.draw.circle(self.window, self.red, (100, 570), 7)
-        pg.draw.circle(self.window, self.red, (100, 615), 7)
-        pg.draw.circle(self.window, self.red, (100, 570), 7)
-        pg.draw.circle(self.window, self.red, (120, 570), 7)
-        pg.draw.circle(self.window, self.red, (120, 105), 7)
-        pg.draw.circle(self.window, self.red, (120, 80), 7)
-        pg.draw.circle(self.window, self.red, (30, 80), 7)
-        pg.draw.circle(self.window, self.red, (30, 570), 7)
-        pg.draw.circle(self.window, self.red, (100, 570), 7)
+        #pg.draw.circle(self.window, self.red, (100, 615), 7)
         #pg.draw.circle(self.window, self.red, (100, 570), 7)
         #pg.draw.circle(self.window, self.red, (120, 570), 7)
+        #pg.draw.circle(self.window, self.red, (120, 105), 7)
+        #pg.draw.circle(self.window, self.red, (120, 80), 7)
+        #pg.draw.circle(self.window, self.red, (30, 80), 7)
+        #pg.draw.circle(self.window, self.red, (30, 570), 7)
+        #pg.draw.circle(self.window, self.red, (100, 570), 7)
         # Path Outbound
         #pg.draw.circle(self.window, self.red, (100, 80), 7)
         #pg.draw.circle(self.window, self.red, (100, 35), 7)
