@@ -27,10 +27,10 @@
 /datacraft/apps/transformations/migrations/__pycache__
 /datacraft/apps/transformations/templates/transformations/__pycache__
 
-/APIs/FlowForge/venv
+/APIs/Flow_Forge/venv
 
-/APIs/Robotic Distribution Center/venv
-/APIs/Robotic Distribution Center/__pycache__
+/APIs/Robotic_Distribution_Center/venv
+/APIs/Robotic_Distribution_Center/__pycache__
 
-/APIs/Line Follower Robot/venv_LFR
-/APIs/Line Follower Robot/__pycache__
+/APIs/Line_Follower_Robot/venv_LFR
+/APIs/Line_Follower_Robot/__pycache__

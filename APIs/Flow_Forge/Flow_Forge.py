@@ -2,7 +2,7 @@ import os
 import pygame as pg
 
 
-class FlowForge:
+class Flow_Forge:
     def __init__(self):
         self.white        = (255, 255, 255)
         self.black        = (  0,   0,   0)

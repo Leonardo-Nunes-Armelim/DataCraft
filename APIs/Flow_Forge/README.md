@@ -1,7 +1,6 @@
+# Flow Forge
 
 pip freeze > requirements.txt
-
-
 
 ## Como Começar:
     Clone o repositório
@@ -9,4 +8,4 @@ pip freeze > requirements.txt
     .\venv\Scripts\activate.bat
     python.exe -m pip install --upgrade pip
     pip install -r requirements.txt
-    py Robotic_Distribution_Center.py
+    python Flow_Forge.py

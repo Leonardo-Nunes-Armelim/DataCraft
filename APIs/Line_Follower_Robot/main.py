@@ -30,7 +30,7 @@ def startup():
     global ser
 
     ser = serial.Serial(
-        "COM5",
+        "COM7",
         115200,
         timeout=1
     )
