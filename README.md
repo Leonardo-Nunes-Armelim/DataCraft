@@ -53,3 +53,26 @@ O DataCraft é como um mini-Databricks + Airflow + Metabase, mas desenvolvido do
 ### Mac/Linux
 
     ./start_datacraft.sh
+
+## PostgreSQL e variáveis de ambiente
+
+O DataCraft usa PostgreSQL. As credenciais ficam em `datacraft/.env`, fora do código e fora do Git.
+
+1. Entre na pasta que contém o `manage.py`, copie o modelo e informe a sua senha local:
+
+   ```cmd
+   cd datacraft
+   copy .env.example .env
+   notepad .env
+   ```
+
+   Preencha `POSTGRES_PASSWORD`. Os demais valores já apontam para o banco local `DataCraft` na porta `5433`.
+
+2. Crie/atualize as tabelas e inicie o Django:
+
+   ```cmd
+   py manage.py migrate
+   py manage.py runserver
+   ```
+
+O arquivo `.env` é específico da sua máquina e não deve ser enviado ao Git. O `.env.example` é o modelo seguro que deve permanecer no projeto.

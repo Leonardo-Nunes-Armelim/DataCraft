@@ -1,4 +1,5 @@
 /venv
+**/.env
 /api/api/__pycache__
 /datacraft/datacraft/__pycache__
 /datacraft/theme/__pycache__

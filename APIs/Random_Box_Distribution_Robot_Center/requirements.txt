@@ -1,0 +1,6 @@
+kafka-python==3.0.10
+psycopg==3.3.4
+psycopg-binary==3.3.4
+pygame==2.6.1
+typing_extensions==4.16.0
+tzdata==2026.3
